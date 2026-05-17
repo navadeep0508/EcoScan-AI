@@ -96,7 +96,7 @@ Ensure you have the following installed on your system:
 #### 1. Clone the Repository
 Open your terminal (PowerShell, CMD, or Bash) and run:
 ```bash
-git clone <your-repository-url>
+git clone https://github.com/navadeep0508/EcoScan-AI.git
 cd garbage_detection
 ```
 
