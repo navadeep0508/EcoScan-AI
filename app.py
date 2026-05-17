@@ -199,42 +199,48 @@ def detect_image():
             except ValueError:
                 pass
             
-    # Run YOLO prediction
-    results = model(img, conf=conf_val)
-    annotated_img = results[0].plot()
-    
-    # Process detections
-    detections = []
-    summary_counts = {}
-    
-    boxes = results[0].boxes
-    for box in boxes:
-        cls_id = int(box.cls[0].item())
-        cls_name = model.names[cls_id]
-        conf = float(box.conf[0].item())
-        coords = box.xyxy[0].tolist()
+    try:
+        # Run YOLO prediction
+        results = model(img, conf=conf_val)
+        annotated_img = results[0].plot()
         
-        detections.append({
-            'class': cls_name,
-            'confidence': conf,
-            'bbox': [int(c) for c in coords]
+        # Process detections
+        detections = []
+        summary_counts = {}
+        
+        boxes = results[0].boxes
+        for box in boxes:
+            cls_id = int(box.cls[0].item())
+            cls_name = model.names[cls_id]
+            conf = float(box.conf[0].item())
+            coords = box.xyxy[0].tolist()
+            
+            detections.append({
+                'class': cls_name,
+                'confidence': conf,
+                'bbox': [int(c) for c in coords]
+            })
+            summary_counts[cls_name] = summary_counts.get(cls_name, 0) + 1
+            
+        # Encode output to base64 JPG
+        ret, buffer = cv2.imencode('.jpg', annotated_img)
+        if not ret:
+            return jsonify({'success': False, 'error': 'Failed to encode output image'}), 500
+            
+        img_base64 = base64.b64encode(buffer).decode('utf-8')
+        
+        return jsonify({
+            'success': True,
+            'image': f"data:image/jpeg;base64,{img_base64}",
+            'detections': detections,
+            'summary': summary_counts,
+            'total_count': len(detections)
         })
-        summary_counts[cls_name] = summary_counts.get(cls_name, 0) + 1
-        
-    # Encode output to base64 JPG
-    ret, buffer = cv2.imencode('.jpg', annotated_img)
-    if not ret:
-        return jsonify({'success': False, 'error': 'Failed to encode output image'}), 500
-        
-    img_base64 = base64.b64encode(buffer).decode('utf-8')
-    
-    return jsonify({
-        'success': True,
-        'image': f"data:image/jpeg;base64,{img_base64}",
-        'detections': detections,
-        'summary': summary_counts,
-        'total_count': len(detections)
-    })
+    except Exception as e:
+        import traceback
+        error_msg = f"Inference Error: {str(e)}\n{traceback.format_exc()}"
+        print(error_msg)
+        return jsonify({'success': False, 'error': error_msg}), 500
 
 @app.route('/upload_video', methods=['POST'])
 def upload_video():
