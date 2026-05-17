@@ -1,0 +1,7 @@
+path: C:/Users/navadeep/Documents/garbage_detection/coco_converted
+
+train: images
+val: images
+
+names:
+  0: garbage

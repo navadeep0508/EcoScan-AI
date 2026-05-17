@@ -1,0 +1,41 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Operating system files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+.DS_Store
+
+# IDE / Editor configurations
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.swp
+
+# Virtual Environments
+venv/
+.venv/
+env/
+.env/
+ENV/
+
+# Python packages / distributions
+dist/
+build/
+*.egg-info/
+
+# YOLO Cache & redundant checkpoints
+*.cache
+labels.cache
+coco_converted/labels.cache
+runs/detect/*/weights/last.pt
+
+# Temporary/upload caches
+static/uploads/*
+!static/uploads/.gitkeep
