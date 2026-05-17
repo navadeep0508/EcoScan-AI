@@ -9,7 +9,7 @@ app_port: 7860
 ---
 
 <div align="center">
-  <h1>♻️ EcoScan AI</h1>
+  <h1>EcoScan AI</h1>
   <h3>Smart Waste Detection & Real-Time Classification Dashboard</h3>
   <p><em>Empowering communities with computer vision to automate, track, and optimize waste recycling.</em></p>
 
@@ -24,19 +24,19 @@ app_port: 7860
 
 ---
 
-## 📖 Table of Contents
-- [Project Overview](#-project-overview)
-- [⚡ Model Performance & Metrics](#-model-performance--metrics)
-- [🌟 Key Features](#-key-features)
-- [🛠️ Tech Stack](#-tech-stack)
-- [💻 Local Setup & Execution](#-local-setup--execution)
-- [🚀 Production & Cloud Deployment](#-production--cloud-deployment)
-- [📂 Project Directory Structure](#-project-directory-structure)
-- [🤝 Contributing & License](#-contributing--license)
+## Table of Contents
+- [Project Overview](#project-overview)
+- [Model Performance & Metrics](#model-performance--metrics)
+- [Key Features](#key-features)
+- [Tech Stack](#tech-stack)
+- [Local Setup & Execution](#local-setup--execution)
+- [Production & Cloud Deployment](#production--cloud-deployment)
+- [Project Directory Structure](#project-directory-structure)
+- [Contributing & License](#contributing--license)
 
 ---
 
-## 📖 Project Overview
+## Project Overview
 
 **EcoScan AI** is a premium, high-performance web dashboard powered by custom-trained **YOLOv8** object detection models, a robust **Flask** backend, and **OpenCV** processing pipelines. 
 
@@ -44,7 +44,7 @@ Designed with a modern, responsive, white-themed SaaS dashboard, it resolves rea
 
 ---
 
-## ⚡ Model Performance & Metrics
+## Model Performance & Metrics
 
 The core intelligence of EcoScan AI is powered by a custom-trained **YOLOv8** object detector tailored specifically for garbage classification. Under strict validation benchmarks, the model displays exceptional capabilities:
 
@@ -54,24 +54,24 @@ The core intelligence of EcoScan AI is powered by a custom-trained **YOLOv8** ob
 | **Precision** | **87%** | Extreme reliability in classifications, ensuring minimal false-positive alarms. |
 | **Recall** | **66%** | High sensitivity in capturing target waste objects under varying lighting and cluttered environments. |
 
-### 📈 Metrics Breakdown & Insights
+### Metrics Breakdown & Insights
 * **Precision-First Architecture**: With an **87% Precision** score, the system is designed to minimize sorting errors, ensuring that recyclables are not incorrectly classified as landfill materials, which is crucial for real-world sorting plants.
 * **Generalization**: The **76% mAP50** demonstrates robust performance in detecting smaller objects, complex trash overlaps, and deformed plastic/paper waste in diverse settings.
 
 ---
 
-## 🌟 Key Features
+## Key Features
 
-* 📱 **Mobile-Optimized Camera Streamer**: Runs an HTML5 client-side video feed to capture camera frames on mobile devices (Safari/Chrome), streaming them directly to the backend API. This completely bypasses local USB webcam constraints and enables cloud hosting on servers without physical camera access.
-* 🖥️ **Native Desktop Webcam Feed**: Integrates OpenCV `VideoCapture` streams for direct, low-latency analysis when hosted locally on hardware with an active webcam.
-* 📁 **Smart Multi-Media Uploader**: Features an interactive drag-and-drop zone that performs instant inference on uploaded images and processes pre-recorded video files frame-by-frame.
-* 🖼️ **Quick-Test Samples Gallery**: A curated carousel of pre-loaded trash samples to showcase YOLOv8 inference speed and bounding box generation within seconds.
-* 🎚️ **Interactive Confidence Controller**: A responsive front-end slider that dynamically modifies the YOLOv8 model's confidence threshold (`conf_threshold`) in real-time, allowing users to fine-tune sensitivity.
-* 📊 **Live Statistical Insights**: Computes real-time data detailing all identified objects, coordinate bounding boxes, and precision statistics, accompanied by dynamic recycling instructions.
+* **Mobile-Optimized Camera Streamer**: Runs an HTML5 client-side video feed to capture camera frames on mobile devices (Safari/Chrome), streaming them directly to the backend API. This completely bypasses local USB webcam constraints and enables cloud hosting on servers without physical camera access.
+* **Native Desktop Webcam Feed**: Integrates OpenCV `VideoCapture` streams for direct, low-latency analysis when hosted locally on hardware with an active webcam.
+* **Smart Multi-Media Uploader**: Features an interactive drag-and-drop zone that performs instant inference on uploaded images and processes pre-recorded video files frame-by-frame.
+* **Quick-Test Samples Gallery**: A curated carousel of pre-loaded trash samples to showcase YOLOv8 inference speed and bounding box generation within seconds.
+* **Interactive Confidence Controller**: A responsive front-end slider that dynamically modifies the YOLOv8 model's confidence threshold (`conf_threshold`) in real-time, allowing users to fine-tune sensitivity.
+* **Live Statistical Insights**: Computes real-time data detailing all identified objects, coordinate bounding boxes, and precision statistics, accompanied by dynamic recycling instructions.
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 - **Computer Vision & Inference**: [Ultralytics YOLOv8](https://github.com/ultralytics/ultralytics) (Neural Networks), OpenCV (Image Manipulation & Video I/O)
 - **Backend Infrastructure**: [Flask](https://flask.palletsprojects.com/) (Python-based micro-framework)
@@ -80,18 +80,18 @@ The core intelligence of EcoScan AI is powered by a custom-trained **YOLOv8** ob
 
 ---
 
-## 💻 Local Setup & Execution
+## Local Setup & Execution
 
 Follow these step-by-step instructions to clone, configure, and execute EcoScan AI on your local computer.
 
-### 📋 Prerequisites
+### Prerequisites
 Ensure you have the following installed on your system:
 - **Python 3.8 to 3.11** (Python 3.12+ is supported, but 3.8-3.11 is recommended for pre-compiled PyTorch wheels)
 - **Git**
 
 ---
 
-### 📥 Step-by-Step Installation
+### Step-by-Step Installation
 
 #### 1. Clone the Repository
 Open your terminal (PowerShell, CMD, or Bash) and run:
@@ -120,7 +120,7 @@ First, upgrade `pip` and then install the required Python packages:
 python -m pip install --upgrade pip
 pip install -r requirements.txt
 ```
-> 💡 *Note: If you have an NVIDIA GPU and want to use CUDA acceleration, make sure to install PyTorch with CUDA support beforehand by following instructions on the [Official PyTorch Website](https://pytorch.org/).*
+> *Note: If you have an NVIDIA GPU and want to use CUDA acceleration, make sure to install PyTorch with CUDA support beforehand by following instructions on the [Official PyTorch Website](https://pytorch.org/).*
 
 #### 4. Model Configuration
 Ensure your custom-trained YOLOv8 weights file is placed in the root directory:
@@ -141,7 +141,7 @@ http://localhost:5000
 
 ---
 
-## 🚀 Production & Cloud Deployment
+## Production & Cloud Deployment
 
 EcoScan AI is 100% pre-configured for seamless containerized and server-based deployments:
 
@@ -168,7 +168,7 @@ Railway automatically detects the root `Dockerfile` or `Procfile`.
 
 ---
 
-## 📂 Project Directory Structure
+## Project Directory Structure
 
 ```plaintext
 garbage_detection/
@@ -189,7 +189,7 @@ garbage_detection/
 
 ---
 
-## 🤝 Contributing & License
+## Contributing & License
 
 Contributions are what make the open-source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
 
@@ -202,5 +202,5 @@ Contributions are what make the open-source community such an amazing place to l
 ---
 
 <div align="center">
-  <p>Developed with ❤️ by the EcoScan AI Team.</p>
+  <p>Developed by the EcoScan AI Team.</p>
 </div>
