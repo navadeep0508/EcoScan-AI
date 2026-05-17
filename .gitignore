@@ -30,10 +30,10 @@ dist/
 build/
 *.egg-info/
 
-# YOLO Cache & redundant checkpoints
+# YOLO Cache, Datasets & redundant checkpoints
 *.cache
 labels.cache
-coco_converted/labels.cache
+coco_converted/
 runs/detect/*/weights/last.pt
 
 # Temporary/upload caches
