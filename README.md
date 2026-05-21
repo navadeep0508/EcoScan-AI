@@ -59,12 +59,9 @@ flowchart TD
 
 | Description | Image |
 |-------------|-------|
-| Detection output (sample) | ![Detection Output](images/detection_output.png) |
-| Webcam inference UI | ![Webcam UI](images/webcam_ui.png) |
-| Bounding boxes on video | ![Bounding Boxes](images/bounding_boxes.gif) |
-| Full application UI | ![App UI](images/app_ui.png) |
+| Dashboard view | ![Dashboard](images/dashboard.png) |
 
-*Replace the placeholder images with actual screenshots/GIFs from your project.*
+
 
 ---
 
